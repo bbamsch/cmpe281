@@ -15,10 +15,10 @@ services:
       - 3000:3000
     restart: always
     environment:
-      - MYSQL="root:cmpe281@tcp(mysql:3306)/cmpe281"
-      - RIAK1="http://gumballriak_member_1:8098"
-      - RIAK2="http://gumballriak_member_2:8098"
-      - RIAK3="http://gumballriak_member_3:8098"
+      - MYSQL=root:cmpe281@tcp(mysql:3306)/cmpe281
+      - RIAK1=http://gumballriak_member_1:8098
+      - RIAK2=http://gumballriak_member_2:8098
+      - RIAK3=http://gumballriak_member_3:8098
     links:
       - member
       - mysql

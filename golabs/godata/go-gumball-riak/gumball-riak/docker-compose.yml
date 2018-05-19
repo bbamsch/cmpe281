@@ -64,6 +64,7 @@ services:
     image: basho/riak-kv
     ports:
       - 9000-9003:8098
+      - 10000-10003:8087
     labels:
       - "com.basho.riak.cluster.name=riakkv"
     links:

@@ -34,11 +34,15 @@ services:
       - db    
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=cmpe281   
+      - MYSQL_ROOT_PASSWORD=cmpe281
+    volumes:
+      - mysql-schemas:/var/lib/mysql
   cassandra:
     image: cassandra:2.2
     networks:
       - front
+    volumes:
+      - cassandra-schemas:/var/lib/cassandra
   kong:
     image: kong:0.9.9
     ports:
@@ -84,6 +88,8 @@ services:
 volumes:
   schemas:
     external: false
+  mysql-schemas:
+  cassandra-schemas:
 
 networks:
   front:
